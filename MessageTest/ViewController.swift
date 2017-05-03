@@ -9,9 +9,6 @@
 import UIKit
 
 
-
-
-
 class ViewController:UIViewController,
         UIImagePickerControllerDelegate,
         UINavigationControllerDelegate
@@ -22,7 +19,7 @@ class ViewController:UIViewController,
     
     @IBAction func openCameraButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let imagePicker = UIImagePickerController()
+            var imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
@@ -31,19 +28,37 @@ class ViewController:UIViewController,
         else{
             print("can't find camera");
         }
-        func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-            print("didFinishPickingImage")
-            self.imagePicker.image = image // 到imageview顯示
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) // 儲存圖片
-            picker.dismiss(animated: true, completion: nil) // 退出相機
+        func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+            imagePicker.image = image
+            self.dismiss(animated: true, completion: nil);
         }
-        
-        func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-            print("imagePickerControllerDidCancel")
-            picker.dismiss(animated: true, completion: nil) // 退出相機
-        }
-        
+    
+   
     }
+    @IBAction func openPhotoLibraryButton(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+
+    }
+
+        
+//     @IBAction func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+//            print("didFinishPickingImage")
+//            self.imagePicker.image = image // 到imageview顯示
+//            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) // 儲存圖片
+//            picker.dismiss(animated: true, completion: nil) // 退出相機
+//        }
+//
+//        func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+//            print("imagePickerControllerDidCancel")
+//            picker.dismiss(animated: true, completion: nil) // 退出相機
+//        }
+        
+}
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,14 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3sJ-m8-5Y3">
-                                <rect key="frame" x="16" y="28" width="343" height="581"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vq-hr-Zjr">
                                 <rect key="frame" x="72" y="629" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVg-yT-IrB"/>
+                                    <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fsp-LB-NdZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3sJ-m8-5Y3">
+                                <rect key="frame" x="16" y="28" width="343" height="581"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-JD-WT6">
+                                <rect key="frame" x="142" y="629" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="openPhotoLibraryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNZ-2B-X5F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,15 +44,17 @@
                         <constraints>
                             <constraint firstItem="3sJ-m8-5Y3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="9kZ-UZ-QTj"/>
                             <constraint firstItem="6Vq-hr-Zjr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="56" id="CIc-HU-ZKQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lzv-JD-WT6" secondAttribute="bottom" constant="8" id="CNs-ww-8tZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3sJ-m8-5Y3" secondAttribute="leading" id="HN0-Cs-BTO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3sJ-m8-5Y3" secondAttribute="trailing" id="LRq-AL-EaW"/>
                             <constraint firstItem="6Vq-hr-Zjr" firstAttribute="top" secondItem="3sJ-m8-5Y3" secondAttribute="bottom" constant="20" id="Tzi-gJ-7Rd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3sJ-m8-5Y3" secondAttribute="bottom" constant="58" id="Z0x-po-J0V"/>
+                            <constraint firstItem="lzv-JD-WT6" firstAttribute="leading" secondItem="6Vq-hr-Zjr" secondAttribute="trailing" constant="24" id="h4D-1h-rXr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Vq-hr-Zjr" secondAttribute="bottom" constant="8" id="zzJ-rf-FUa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imagePicker" destination="3sJ-m8-5Y3" id="QAj-Hz-wzd"/>
+                        <outlet property="imagePicker" destination="3sJ-m8-5Y3" id="qgo-0X-k97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
